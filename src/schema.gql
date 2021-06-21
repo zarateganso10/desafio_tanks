@@ -1,0 +1,40 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Produto {
+  id: ID!
+  nome_do_produto: String!
+  fabricante: String!
+  quantidade_em_estoque: Float!
+  valor: Float!
+}
+
+type Query {
+  buscarProdutos: [Produto!]!
+  buscarProdutoPorId(id: Float!): Produto!
+  quantidadeProdutos: Float!
+  produtoMenorEstoque: Produto!
+  produtoMaiorEstoque: Produto!
+  produtosSemEstoque: [Produto!]!
+}
+
+type Mutation {
+  adicionarProduto(data: CreateProdutoInput!): Produto!
+  alterarProduto(data: UpdateProdutoInput!, id: Float!): Produto!
+  deletarProduto(id: Float!): Boolean!
+}
+
+input CreateProdutoInput {
+  nome_do_produto: String!
+  fabricante: String!
+  quantidade_em_estoque: Float!
+  valor: Float!
+}
+
+input UpdateProdutoInput {
+  nome_do_produto: String
+  fabricante: String
+  quantidade_em_estoque: Float
+  valor: Float
+}
